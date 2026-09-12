@@ -1,7 +1,7 @@
 const CONFIG = {
     API_URL: 'https://absensi-api.yumenoboken.workers.dev',
     GOOGLE_CLIENT_ID: '103167988388-j5j4o83ieakv5o4rakv1v735btgp3ldp.apps.googleusercontent.com',
-    SUPER_ADMIN_EMAILS: ['lpkinsanjaya@gmail.com', 'yumenoboken@gmail.com', 'calonmaou@gmail.com'],
+    SUPER_ADMIN_EMAILS: ['lpkinsanjaya@gmail.com', 'yumenoboken@gmail.com', 'najwanhp123@gmail.com'],
     ADMIN_EMAILS: ['lpkinsanjaya@gmail.com', 'yumenoboken@gmail.com', 'elsasidamawarniut@gmail.com', 'zilisaje@gmail.com', 'calonmaou@gmail.com'],
     GURU_EMAILS: [
         'lpkinsanjaya@gmail.com',

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - LKP Insan Jaya</title>
+    <title>Login - LKP Zakiyah</title>
+    <meta name="description" content="Portal Akademik LKP Zakiyah - Sistem manajemen kursus dan pendidikan">
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap"
@@ -17,6 +18,69 @@
     <script src="js/config.js?v=5.0"></script>
     <script src="js/common.js?v=5.0"></script>
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zakiyah: {
+                            50: '#fef7f0',
+                            100: '#fdebd6',
+                            200: '#fad4ab',
+                            300: '#f6b576',
+                            400: '#f18d3f',
+                            500: '#ee7319',
+                            600: '#df590f',
+                            700: '#b9420f',
+                            800: '#933514',
+                            900: '#772e13',
+                        },
+                        maroon: {
+                            50: '#fdf2f4',
+                            100: '#fce7eb',
+                            200: '#f9d0d9',
+                            300: '#f4a9b9',
+                            400: '#ec7894',
+                            500: '#df4d71',
+                            600: '#cb2d5d',
+                            700: '#ab1f4a',
+                            800: '#8f1d42',
+                            900: '#7a1c3d',
+                            950: '#450a1e',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 8s infinite',
+                        'blob-slow': 'blob 12s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'shimmer': 'shimmer 2.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        shimmer: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -25,44 +89,114 @@
         .font-bricolage {
             font-family: 'Bricolage Grotesque', sans-serif;
         }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        .animation-delay-6000 {
+            animation-delay: 6s;
+        }
+
+        /* Glassmorphism card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Subtle pattern overlay */
+        .pattern-overlay {
+            background-image: radial-gradient(circle at 1px 1px, rgba(120, 28, 61, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        /* Decorative line animation */
+        .accent-line {
+            background: linear-gradient(90deg, transparent, #ab1f4a, #ee7319, transparent);
+        }
     </style>
 </head>
 
-<body
-    class="bg-slate-50 text-slate-800 antialiased min-h-screen flex items-center justify-center relative overflow-hidden p-4">
+<body class="antialiased min-h-screen flex items-center justify-center relative overflow-hidden p-4">
 
+    <!-- Background gradient base -->
+    <div class="fixed inset-0 bg-gradient-to-br from-stone-50 via-orange-50/40 to-red-50/30"></div>
+
+    <!-- Dot pattern overlay -->
+    <div class="fixed inset-0 pattern-overlay"></div>
+
+    <!-- Animated background blobs -->
     <div
-        class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-violet-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
+        class="absolute top-[-15%] left-[-10%] w-[28rem] h-[28rem] bg-maroon-800/15 rounded-full mix-blend-multiply filter blur-3xl animate-blob">
     </div>
     <div
-        class="absolute top-[20%] right-[-10%] w-96 h-96 bg-fuchsia-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000">
+        class="absolute top-[10%] right-[-12%] w-[24rem] h-[24rem] bg-zakiyah-400/15 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000">
     </div>
     <div
-        class="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-indigo-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000">
+        class="absolute bottom-[-18%] left-[15%] w-[26rem] h-[26rem] bg-maroon-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000">
+    </div>
+    <div
+        class="absolute bottom-[5%] right-[10%] w-[20rem] h-[20rem] bg-zakiyah-300/12 rounded-full mix-blend-multiply filter blur-3xl animate-blob-slow animation-delay-6000">
     </div>
 
+    <!-- Main login card -->
     <div id="loginCard"
-        class="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/50 p-8 sm:p-10 relative z-10 transition-all duration-300">
+        class="w-full max-w-md glass-card rounded-[2rem] shadow-2xl p-8 sm:p-10 relative z-10 animate-fade-in-up overflow-hidden">
 
-        <div class="text-center mb-8">
+        <!-- Decorative top accent line -->
+        <div class="absolute top-0 left-0 right-0 h-1 rounded-b-full accent-line"></div>
+
+        <!-- Header section -->
+        <div class="text-center mb-8 mt-2">
+            <!-- Logo -->
             <div
-                class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-sm border border-slate-100 overflow-hidden mb-4">
-                <img src="image/Logo Insan Jaya.png" alt="Logo Insan Jaya" class="w-full h-full object-contain"
+                class="inline-flex items-center justify-center w-[4.5rem] h-[4.5rem] rounded-2xl bg-white shadow-lg shadow-maroon-900/10 border border-stone-100 mb-5 overflow-hidden">
+                <img src="image/Logo Insan Jaya.png" alt="Logo LKP Zakiyah" class="w-full h-full object-contain p-1"
                     onerror="this.src='https://via.placeholder.com/150'" />
             </div>
-            <h1 class="font-bricolage text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Selamat Datang!</h1>
-            <p class="text-sm text-slate-500 mt-2 font-medium">Masuk menggunakan akun Google Anda untuk mengakses sistem
-                akademik <span class="text-violet-600 font-bold">LKP Insan Jaya</span>.</p>
+
+            <!-- Branding text -->
+            <div class="mb-4">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-maroon-700/60 mb-1">Portal Akademik</p>
+                <h1 class="font-bricolage text-3xl sm:text-[2rem] font-bold tracking-tight">
+                    <span class="text-maroon-900">LKP </span><span class="bg-gradient-to-r from-maroon-800 to-zakiyah-600 bg-clip-text text-transparent">Zakiyah</span>
+                </h1>
+            </div>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-3 mb-5">
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent to-maroon-200/60"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-zakiyah-400/50"></div>
+                <div class="flex-1 h-px bg-gradient-to-l from-transparent to-maroon-200/60"></div>
+            </div>
+
+            <h2 class="text-xl sm:text-2xl font-bold text-stone-800">Selamat Datang!</h2>
+            <p class="text-sm text-stone-500 mt-2 font-medium leading-relaxed">
+                Masuk menggunakan akun Google Anda<br class="hidden sm:block"> untuk mengakses sistem akademik LKP Zakiyah.
+            </p>
         </div>
 
+        <!-- Google Login Button Container -->
         <div class="flex flex-col items-center justify-center space-y-4">
-
-            <div id="googleBtnContainer" class="w-full flex justify-center min-h-[40px]"></div>
-            <div id="statusMsg" class="hidden w-full text-xs font-bold text-center p-3 rounded-xl transition-all"></div>
+            <div id="googleBtnContainer" class="w-full flex justify-center min-h-[44px]"></div>
+            <div id="statusMsg" class="hidden w-full text-xs font-bold text-center p-3 rounded-xl transition-all">
+            </div>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-slate-100 text-center">
-            <p class="text-[10px] text-slate-400 font-medium tracking-wider uppercase mt-4">© 2026 LKP Insan Jaya. All
+        <!-- Footer -->
+        <div class="mt-8 pt-6 border-t border-stone-200/60 text-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <div class="w-1 h-1 rounded-full bg-maroon-300"></div>
+                <div class="w-1 h-1 rounded-full bg-zakiyah-400"></div>
+                <div class="w-1 h-1 rounded-full bg-maroon-300"></div>
+            </div>
+            <p class="text-[10px] text-stone-400 font-medium tracking-wider uppercase">© 2026 LKP Zakiyah. All
                 rights reserved.</p>
         </div>
 
@@ -79,10 +213,10 @@
             // Sembunyikan tombol Google saat memproses
             googleBtn.classList.add('hidden');
 
-            // Tampilkan status loading
-            statusMsg.className = 'w-full text-xs font-bold text-center p-3 rounded-xl transition-all bg-violet-50 text-violet-600 border border-violet-100 flex justify-center items-center gap-2';
+            // Tampilkan status loading dengan tema Zakiyah
+            statusMsg.className = 'w-full text-xs font-bold text-center p-3 rounded-xl transition-all bg-zakiyah-50 text-zakiyah-700 border border-zakiyah-200 flex justify-center items-center gap-2';
             statusMsg.innerHTML = `
-                <svg class="animate-spin h-4 w-4 text-violet-600" fill="none" viewBox="0 0 24 24">
+                <svg class="animate-spin h-4 w-4 text-zakiyah-600" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
@@ -161,7 +295,5 @@
         }
     </script>
 </body>
-
-</html>
 
 </html>

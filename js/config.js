@@ -21,6 +21,10 @@ const CONFIG = {
         'gustianimeli970@gmail.com',
     ],
     CLASSES_BY_PROGRAM: {
+        "Program 1 Bulan": ["Reguler", "Kelas Pagi", "Kelas Siang", "Kelas Sore"],
+        "Program 3 Bulan": ["Reguler", "Kelas Pagi", "Kelas Siang", "Kelas Sore"],
+        "Program 6 Bulan": ["Reguler", "Kelas Pagi", "Kelas Siang", "Kelas Sore"],
+        "Program Private": ["Private 1-on-1", "Private Grup"],
         "bimbel": ["Kelas 1", "Kelas 2", "Kelas 3", "Kelas 4", "Kelas 5", "Kelas 6", "Kelas 7", "Kelas 8", "Kelas 9"],
         "bahasa inggris": ["Beginner", "Intermediate", "Upper Intermediate", "Advanced"],
         "bahasa arab": ["Iqra + B Arab Dasar"],
@@ -29,6 +33,10 @@ const CONFIG = {
         "menggambar & mewarnai": ["Gambar + Warna"]
     },
     GURU_BY_PROGRAM: {
+        "Program 1 Bulan": ["Instruktur LKP Zakiyah", "Shinta Deslianty, S.Pd", "Usniatun Sudiarsih, SH", "Meli Gustiani"],
+        "Program 3 Bulan": ["Instruktur LKP Zakiyah", "Shinta Deslianty, S.Pd", "Usniatun Sudiarsih, SH", "Meli Gustiani"],
+        "Program 6 Bulan": ["Instruktur LKP Zakiyah", "Shinta Deslianty, S.Pd", "Usniatun Sudiarsih, SH", "Meli Gustiani"],
+        "Program Private": ["Instruktur LKP Zakiyah", "Shinta Deslianty, S.Pd", "Usniatun Sudiarsih, SH", "Meli Gustiani"],
         "bimbel": ["Shinta Deslianty, S.Pd", "Usniatun Sudiarsih, SH", "Meli Gustiani", "Ildatun Nazila S.E"],
         "bahasa inggris": ["Tri Zahara, S.Pd", "Wasaluwa"],
         "calistung": ["Usniatun Sudiarsih, SH"],

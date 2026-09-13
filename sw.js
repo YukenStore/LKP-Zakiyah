@@ -19,7 +19,7 @@ self.addEventListener('push', (event) => {
         icon: 'image/Logo Insan Jaya.png',
         badge: 'image/icon-192.png',
         vibrate: [200, 100, 200],
-        data: { url: self.registration.scope + 'rekap-online.html' }
+        data: { url: self.registration.scope + 'dashboard.html' }
     };
 
     event.waitUntil(
@@ -27,16 +27,16 @@ self.addEventListener('push', (event) => {
     );
 });
 
-// Saat user klik notifikasi, buka halaman rekap-online
+// Saat user klik notifikasi, buka halaman dashboard
 self.addEventListener('notificationclick', (event) => {
     event.notification.close();
-    const urlToOpen = event.notification.data?.url || self.registration.scope + 'rekap-online.html';
+    const urlToOpen = event.notification.data?.url || self.registration.scope + 'dashboard.html';
     
     event.waitUntil(
         clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
             // Cek apakah ada tab yang sudah terbuka
             for (let client of windowClients) {
-                if (client.url.includes('rekap-online') && 'focus' in client) {
+                if (client.url.includes('dashboard') && 'focus' in client) {
                     return client.focus();
                 }
             }

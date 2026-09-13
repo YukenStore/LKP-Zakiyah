@@ -11,17 +11,79 @@ if (isLoginPage) {
 } else {
     if (!userEmail) {
         window.location.href = 'index.html';
-    } else {
-        // Protect pages based on Admin/Staff role
-        const adminOnlyPages = ['rekap-online.html', 'pendaftaran.html', 'rekap-keuangan.html'];
-        const isPageAdminOnly = adminOnlyPages.includes(currentPage);
-        const isAdmin = CONFIG.ADMIN_EMAILS.includes(userEmail);
-        
-        if (isPageAdminOnly && !isAdmin) {
-            alert("⛔ Akses Ditolak: Halaman ini khusus Admin.");
-            window.location.href = 'dashboard.html';
-        }
     }
+}
+
+// Global Logout function
+function logout() {
+    if (confirm('Apakah Anda yakin ingin keluar dari sistem?')) {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = 'index.html';
+    }
+}
+window.logout = logout;
+
+// ================= NAV DRAWER / DROPDOWN CONTROLLER (LKP ZAKIYAH) =================
+function toggleDropdownMenu(e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    const drawer = document.getElementById('navDrawer');
+    const overlay = document.getElementById('navOverlay');
+    if (!drawer) return;
+
+    if (drawer.classList.contains('is-open')) {
+        closeDropdownMenu();
+    } else {
+        openDropdownMenu();
+    }
+}
+
+function openDropdownMenu() {
+    const drawer = document.getElementById('navDrawer');
+    const overlay = document.getElementById('navOverlay');
+    if (drawer) drawer.classList.add('is-open');
+    if (overlay) overlay.classList.add('is-open');
+}
+
+function closeDropdownMenu() {
+    const drawer = document.getElementById('navDrawer');
+    const overlay = document.getElementById('navOverlay');
+    if (drawer) drawer.classList.remove('is-open');
+    if (overlay) overlay.classList.remove('is-open');
+}
+
+window.toggleDropdownMenu = toggleDropdownMenu;
+window.openDropdownMenu = openDropdownMenu;
+window.closeDropdownMenu = closeDropdownMenu;
+
+// Inisialisasi Event Listener untuk hamburgerBtn, closeBtn, dan overlay
+function initNavigationEvents() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const closeBtn = document.getElementById('closeDropdownBtn');
+    const overlay = document.getElementById('navOverlay');
+
+    if (hamburgerBtn) {
+        hamburgerBtn.onclick = toggleDropdownMenu;
+    }
+    if (closeBtn) {
+        closeBtn.onclick = closeDropdownMenu;
+    }
+    if (overlay) {
+        overlay.onclick = closeDropdownMenu;
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDropdownMenu();
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigationEvents);
+} else {
+    initNavigationEvents();
 }
 
 // ================= GLOBAL HELPERS =================
